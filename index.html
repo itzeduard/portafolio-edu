@@ -6,17 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="img/logo-edu.png">
   <meta name="description" content="Portafolio de Edu, configurador de Minecraft y director creativo de BlockVerse Studio.">
-  <title>Edu | Portafolio Minecraft</title>
+  <title>Edu | Portafolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
 
+  <!-- BOTÓN VOLVER ARRIBA -->
+<button id="volverArriba" class="volver-arriba"
+        aria-label="Volver al inicio de la página"
+        title="Volver arriba">
+  ↑
+</button>
+  
+<!-- BARRA DE PROGRESO DE LECTURA -->
+<div
+  id="barraProgreso"
+  class="barra-progreso"
+  role="progressbar"
+  aria-label="Progreso de lectura de la página"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="0">
+</div>
+
   <!-- MENÚ -->
   <header class="cabecera">
     <a class="logo" href="#inicio">
   <img src="img/logo-edu.png" alt="Logo oficial de Edu">
-  <span>EDU</span>
+  <span>ITZEDUARD</span>
 </a>
 
     <button class="menu-boton" id="menuBoton"
@@ -47,6 +65,13 @@
       <h1>Hola, soy <span>Edu.</span></h1>
 
       <h2>Transformo ideas en experiencias únicas.</h2>
+      
+<!-- EFECTO DE ESCRITURA -->
+<p class="texto-escritura">
+  <span id="textoAnimado"></span>
+  <span class="cursor-escritura" aria-hidden="true">|</span>
+</p>
+
 
       <p class="descripcion">
         Soy configurador de servidores Minecraft,
@@ -195,6 +220,21 @@
         <h2>Proyectos destacados</h2>
 
         <div class="cuadricula proyectos-grid">
+
+<!-- BUSCADOR DE PROYECTOS -->
+<div class="buscador-proyectos">
+  <label for="buscarProyecto">Buscar proyectos</label>
+
+  <input
+    type="search"
+    id="buscarProyecto"
+    placeholder="🔎 Escribe el nombre de un proyecto..."
+    autocomplete="off">
+</div>
+
+<p id="sinResultados" class="sin-resultados" hidden>
+  No se encontraron proyectos con ese nombre.
+</p>
             
 <!-- WINGSCRAFT -->
 <article class="tarjeta">
@@ -228,12 +268,13 @@
     
 <p>
   Participación como soporte en Lucky Walls 2,
-  encargándome del servidor de Discord y Servidor para el evento.
+  encargándome del servidor para el evento.
 </p>
 
     <div class="proyecto-tags">
       <span>Minecraft Eventos</span>
       <span>Configuración</span>
+      <span>Soporte</span>
     </div>
   </div>
 </article>
@@ -247,14 +288,15 @@
     <h3>Zampon</h3>
     
 <p>
-  Configuración de sistemas y mecánicas de cocina
-  para el evento Zampon. Me encargué de preparar
+  Configuración de sistemas de cocina para
+  el evento Zampon. Me encargué de preparar
   su funcionamiento técnico dentro de Minecraft.
 </p>
 
     <div class="proyecto-tags">
       <span>Minecraft Eventos</span>
       <span>Configuración</span>
+      <span>Soporte</span>
     </div>
   </div>
 </article>
@@ -409,6 +451,67 @@
     </div>
   </div>
 </article>
+
+<!-- NORDICAL -->
+<article class="tarjeta">
+  <div class="proyecto-imagen nordical">
+  </div>
+
+  <div class="tarjeta-contenido">
+    <span class="categoria">
+      MINECRAFT · NETWORK
+    </span>
+
+    <h3>Nordical</h3>
+
+    <p>
+      Participé como configurador, builder
+      y soporte técnico en una network
+      de Minecraft, en colaboración con SrFirox.
+      Trabajé tanto en la configuración
+      como en la construcción y el soporte.
+    </p>
+
+    <div class="proyecto-tags">
+      <span>Minecraft Network</span>
+      <span>Configuración</span>
+      <span>Builder</span>
+      <span>Soporte</span>
+    </div>
+  </div>
+</article>
+
+<!-- PLANETBLOCK -->
+<article class="tarjeta">
+  <div class="proyecto-imagen planetblock">
+  </div>
+
+  <div class="tarjeta-contenido">
+    <span class="categoria">
+      MINECRAFT · NETWORK
+    </span>
+
+    <h3>PlanetBlock</h3>
+
+    <p>
+      Mi primera network de Minecraft,
+      donde desempeñé el papel de director
+      y configurador. Fue una experiencia
+      importante para desarrollar mis
+      habilidades de dirección y
+      administración de servidores.
+    </p>
+
+    <div class="proyecto-tags">
+      <span>Minecraft Network</span>
+      <span>Configuración</span>
+      <span>Organización</span>
+      <span>Builder</span>
+      <span>Soporte</span>
+    </div>
+  </div>
+</article>
+
 
 
         
@@ -648,7 +751,7 @@
       </div>
 
       <div class="estadistica">
-        <strong>10</strong>
+        <strong>12</strong>
         <span>Proyectos destacados</span>
       </div>
 
@@ -697,6 +800,33 @@
           para streamers y comunidades.
         </p>
       </article>
+      
+<!-- DESARROLLO DE BOTS DISCORD -->
+<article class="servicio">
+  <h3>🤖 Desarrollo de bots Discord</h3>
+
+  <p>
+    Desarrollo y configuración de bots
+    personalizados utilizando JavaScript
+    y Discord.js. Implementación de sistemas
+    de moderación, tickets, autoroles,
+    economía virtual, minijuegos
+    y herramientas para comunidades.
+  </p>
+</article>
+
+<!-- DISEÑO DE SERVIDORES DISCORD -->
+<article class="servicio">
+  <h3>🎨 Diseño de servidores Discord</h3>
+
+  <p>
+    Creación y organización de servidores
+    Discord para comunidades y proyectos.
+    Diseño de categorías, canales,
+    roles, permisos, paneles interactivos
+    y estructura visual personalizada.
+  </p>
+</article>
 
     </div>
 
@@ -762,6 +892,31 @@
         <div class="habilidad-item">
           ✅ Soporte y optimización técnica
         </div>
+        
+<div class="habilidad-item">
+  ✅ Desarrollo con JavaScript y Discord.js
+</div>
+
+<div class="habilidad-item">
+  ✅ Bots de moderación y tickets
+</div>
+
+<div class="habilidad-item">
+  ✅ Autoroles y paneles interactivos
+</div>
+
+<div class="habilidad-item">
+  ✅ Economía virtual y minijuegos Discord
+</div>
+
+<div class="habilidad-item">
+  ✅ Organización de canales y permisos
+</div>
+
+<div class="habilidad-item">
+  ✅ Configuración de servidores Discord
+</div>
+
 
       </div>
     </div>

@@ -25,14 +25,7 @@ document.querySelectorAll('#menu a').forEach(enlace => {
 // AÑO AUTOMÁTICO
 document.getElementById('anio').textContent =
     new Date().getFullYear();
-
-// CONTACTO: PENDIENTE DE CONFIGURAR
-document.getElementById('copiarCorreo')
-    .addEventListener('click', () => {
-        document.getElementById('mensajeContacto').textContent =
-            'Próximamente agregaremos mis redes y correo profesional.';
-    });
-    
+ 
 // ANIMACIONES AL DESPLAZARSE
 
 const elementosAnimados = document.querySelectorAll(
@@ -71,3 +64,150 @@ if (!reducirMovimiento &&
 
 }
 
+// BARRA DE PROGRESO DE LECTURA
+
+console.log('Barra encontrada:', barraProgreso !== null);
+
+function actualizarProgreso() {
+    const documento = document.documentElement;
+
+    const desplazamiento = window.scrollY;
+
+    const alturaDesplazable =
+        documento.scrollHeight - window.innerHeight;
+
+    const porcentaje = alturaDesplazable > 0
+        ? Math.min(100, Math.max(0,
+            (desplazamiento / alturaDesplazable) * 100))
+        : 100;
+
+    barraProgreso.style.width = `${porcentaje}%`;
+
+    barraProgreso.setAttribute(
+        'aria-valuenow',
+        String(Math.round(porcentaje))
+    );
+}
+
+window.addEventListener('scroll', actualizarProgreso, {
+    passive: true
+});
+
+window.addEventListener('resize', actualizarProgreso);
+
+window.addEventListener('load', actualizarProgreso);
+
+actualizarProgreso();
+
+// BOTÓN VOLVER ARRIBA
+
+const botonVolverArriba = document.getElementById('volverArriba');
+
+function controlarBotonArriba() {
+    if (window.scrollY > 400) {
+        botonVolverArriba.classList.add('mostrar');
+    } else {
+        botonVolverArriba.classList.remove('mostrar');
+    }
+}
+
+botonVolverArriba.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches ? 'instant' : 'smooth'
+    });
+});
+
+window.addEventListener('scroll', controlarBotonArriba, {
+    passive: true
+});
+
+controlarBotonArriba();
+
+// BUSCADOR DE PROYECTOS
+
+const buscarProyecto = document.getElementById('buscarProyecto');
+const tarjetasProyectos = document.querySelectorAll(
+    '#proyectos .tarjeta'
+);
+const sinResultados = document.getElementById('sinResultados');
+
+buscarProyecto.addEventListener('input', () => {
+    const busqueda = buscarProyecto.value
+        .toLowerCase()
+        .trim();
+
+    let encontrados = 0;
+
+    tarjetasProyectos.forEach(tarjeta => {
+        const contenido = tarjeta.textContent.toLowerCase();
+        const coincide = contenido.includes(busqueda);
+
+        tarjeta.hidden = !coincide;
+
+        if (coincide) {
+            encontrados++;
+        }
+    });
+
+    sinResultados.hidden = encontrados !== 0;
+});
+
+// EFECTO DE ESCRITURA AUTOMÁTICA
+
+const textoAnimado = document.getElementById('textoAnimado');
+
+const profesionesEdu = [
+  'Configurador de Minecraft',
+  'Director creativo',
+  'Desarrollador de bots Discord',
+  'Roleplayer'
+];
+
+if (textoAnimado) {
+  const reducirMovimientoTexto = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  if (reducirMovimientoTexto) {
+    // Mostrar una frase fija si el usuario prefiere menos movimiento
+    textoAnimado.textContent = profesionesEdu.join(' · ');
+  } else {
+    let indiceProfesion = 0;
+    let indiceLetra = 0;
+    let borrando = false;
+
+    function animarEscritura() {
+      const frase = profesionesEdu[indiceProfesion];
+
+      if (!borrando) {
+        indiceLetra++;
+        textoAnimado.textContent = frase.slice(0, indiceLetra);
+
+        if (indiceLetra === frase.length) {
+          borrando = true;
+          setTimeout(animarEscritura, 1800);
+          return;
+        }
+      } else {
+        indiceLetra--;
+        textoAnimado.textContent = frase.slice(0, indiceLetra);
+
+        if (indiceLetra === 0) {
+          borrando = false;
+          indiceProfesion =
+            (indiceProfesion + 1) % profesionesEdu.length;
+
+          setTimeout(animarEscritura, 350);
+          return;
+        }
+      }
+
+      setTimeout(animarEscritura, borrando ? 45 : 95);
+    }
+
+    animarEscritura();
+  }
+}
