@@ -211,3 +211,33 @@ if (textoAnimado) {
     animarEscritura();
   }
 }
+
+// CONTACTO DIRECTO MEDIANTE GMAIL
+
+const formularioContacto = document.getElementById('formularioContacto');
+
+if (formularioContacto) {
+  formularioContacto.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+
+    const nombre = document.getElementById('contactoNombre').value.trim();
+    const email = document.getElementById('contactoEmail').value.trim();
+    const mensaje = document.getElementById('contactoMensaje').value.trim();
+
+    const destinatario = 'eduardo.grang05@gmail.com';
+    const asunto = 'Nuevo Mensaje - Portafolio de Edu';
+
+    const cuerpo =
+      `Nombre: ${nombre}\n` +
+      `Email: ${email}\n\n` +
+      `Mensaje:\n${mensaje}`;
+
+    const enlaceGmail =
+      'https://mail.google.com/mail/?view=cm&fs=1' +
+      '&to=' + encodeURIComponent(destinatario) +
+      '&su=' + encodeURIComponent(asunto) +
+      '&body=' + encodeURIComponent(cuerpo);
+
+    window.location.href = enlaceGmail;
+  });
+}

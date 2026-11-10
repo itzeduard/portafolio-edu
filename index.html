@@ -242,7 +242,7 @@
   </div>
 
   <div class="tarjeta-contenido">
-    <span class="categoria">MINECRAFT · ROLEPLAY</span>
+    <span class="categoria">MINECRAFT · SERIES</span>
 
     <h3>WingsCraft</h3>
 
@@ -254,6 +254,8 @@
     <div class="proyecto-tags">
       <span>Minecraft Roleplayer</span>
       <span>Configuración</span>
+      <span>Roleplayer</span>
+      <span>Build</span>
     </div>
   </div>
 </article>
@@ -306,7 +308,7 @@
   <div class="proyecto-imagen cyncraft">
   </div>
   <div class="tarjeta-contenido">
-    <span class="categoria">MINECRAFT · SERIE</span>
+    <span class="categoria">MINECRAFT · SERIES</span>
     <h3>CynCraft</h3>
     
 <p>
@@ -330,7 +332,7 @@
   <div class="proyecto-imagen teomicho">
   </div>
   <div class="tarjeta-contenido">
-    <span class="categoria">MINECRAFT · SERIE</span>
+    <span class="categoria">MINECRAFT · SERIES</span>
     <h3>Teomicho</h3>
     
 <p>
@@ -355,11 +357,11 @@
   </div>
   <div class="tarjeta-contenido">
     <span class="categoria">MINECRAFT · EVENTOS</span>
-    <h3>Crimson</h3>
+    <h3>Crimson Zombies</h3>
     
 <p>
   Dirección y configuración del proyecto
-  en colaboración con Zeyblood.
+  en colaboración con Zey.
   Responsable de preparar el servidor,
   configurar sus sistemas y coordinar
   el desarrollo técnico.
@@ -379,7 +381,7 @@
             <div class="proyecto-imagen villamiel">
 </div>
             <div class="tarjeta-contenido">
-              <span class="categoria">MINECRAFT · EVENTOS</span>
+              <span class="categoria">MINECRAFT · SERIES</span>
               <h3>Villamiel</h3>
               
 <p>
@@ -430,7 +432,7 @@
   </div>
 
   <div class="tarjeta-contenido">
-    <span class="categoria">MINECRAFT · SERIE</span>
+    <span class="categoria">MINECRAFT · SERIES</span>
 
     <h3>TaxistasLand</h3>
 
@@ -1009,51 +1011,120 @@
 
   </div>
 </section>
-
-
-    
+   
 <!-- CONTACTO -->
-<section class="seccion contacto fondo" id="contacto">
-  <div class="contenedor">
+<section id="contacto" class="contacto-nuevo">
 
-    <p class="etiqueta">TRABAJEMOS JUNTOS</p>
+  <div class="contacto-contenedor">
 
-    <h2>¿Tienes un proyecto en mente?</h2>
+    <span class="contacto-etiqueta">
+    </span>
 
-    <p class="texto">
-      ¿Necesitas un configurador para tu servidor
-      Minecraft o alguien que te ayude a organizar
-      una experiencia para tu comunidad?
-      ¡Me encantaría conocer tu propuesta!
+    <h2>¿Tienes un proyecto?</h2>
+
+    <p class="contacto-descripcion">
+      Cuéntame tu idea. Estoy disponible
+      para colaborar en proyectos de Minecraft,
+      Discord y desarrollo de bots.
     </p>
 
-    
-<div class="contacto-botones">
+    <div class="contacto-panel">
 
-  <a href="https://linktr.ee/sreduard"
-     class="boton"
-     target="_blank"
-     rel="noopener noreferrer">
-    🌐 Mis redes sociales
-  </a>
+      <div class="contacto-panel-titulo">
+        Contacto.Edu
+      </div>
 
-</div>
+      <form id="formularioContacto" class="contacto-formulario">
+      >
 
+        <input
+          type="hidden"
+          name="_subject"
+          value="Nueva solicitud desde el portafolio de Edu"
+        >
 
-    <p class="contacto-nota">
-      Disponible para colaboraciones y proyectos
-      de Minecraft.
-    </p>
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        >
+
+        <input
+          type="text"
+          name="_honey"
+          class="contacto-antispam"
+          tabindex="-1"
+          autocomplete="off"
+        >
+
+        <div class="contacto-campos">
+
+          <div class="contacto-campo">
+            <label for="contactoNombre">
+              Nombre
+            </label>
+
+            <input
+              id="contactoNombre"
+              type="text"
+              name="name"
+              placeholder="Tu nombre"
+              autocomplete="name"
+              maxlength="100"
+              required
+            >
+          </div>
+
+          <div class="contacto-campo">
+            <label for="contactoEmail">
+              Email
+            </label>
+
+            <input
+              id="contactoEmail"
+              type="email"
+              name="email"
+              placeholder="Tu correo electrónico"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+        </div>
+
+        <div class="contacto-campo">
+          <label for="contactoMensaje">
+            Mensaje
+          </label>
+
+          <textarea
+            id="contactoMensaje"
+            name="message"
+            placeholder="Cuéntame sobre tu proyecto..."
+            rows="5"
+            maxlength="5000"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="contacto-enviar">
+          ✉ Enviar mensaje
+        </button>
+
+      </form>
+
+    </div>
 
   </div>
+
 </section>
 
 
   </main>
 
   <footer>
-    <p>© <span id="anio"></span> Edu · BlockVerse Studio</p>
-    <p>Hecho con 💜 y creatividad.</p>
+    <p>© <span id="anio"></span> Edu</p>
+    <p>Hecho con ❤️ y creatividad.</p>
   </footer>
 
 </body>

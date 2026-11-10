@@ -1601,3 +1601,145 @@ nav a:hover {
     animation: none;
   }
 }
+
+/* NUEVA SECCIÓN DE CONTACTO */
+
+.contacto-nuevo {
+  padding: 100px 6%;
+  background-color: #090909;
+  color: #ffffff;
+}
+
+.contacto-contenedor {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.contacto-etiqueta {
+  color: #aaaaaa;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.contacto-nuevo h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 15px 0;
+}
+
+.contacto-descripcion {
+  color: #bcbcbc;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.contacto-panel {
+  background: #141416;
+  border: 1px solid #303034;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.contacto-panel-titulo {
+  padding: 15px 25px;
+  border-bottom: 1px solid #303034;
+  color: #999999;
+  font-family: monospace;
+  font-size: 13px;
+  background: #0d0d0f;
+}
+
+.contacto-formulario {
+  padding: 28px;
+}
+
+.contacto-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contacto-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.contacto-campo label {
+  font-size: 13px;
+  color: #bcbcbc;
+  font-family: monospace;
+}
+
+.contacto-campo input,
+.contacto-campo textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #101012;
+  border: 1px solid #353539;
+  border-radius: 10px;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+}
+
+.contacto-campo textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contacto-campo input:focus,
+.contacto-campo textarea:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px #ffffff15;
+}
+
+.contacto-enviar {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.contacto-enviar:hover {
+  background: #dddddd;
+  transform: translateY(-2px);
+}
+
+.contacto-antispam {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .contacto-nuevo {
+    padding: 65px 5%;
+  }
+
+  .contacto-campos {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contacto-formulario {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contacto-enviar {
+    transition: none;
+  }
+
+  .contacto-enviar:hover {
+    transform: none;
+  }
+}
